@@ -5,9 +5,9 @@
 This repository contains the core classes for commercial programming 2, CA1 and an overview of the assignment. Please refer to the full assignment specification on BBL. 
 
 ### TODO
-TODO - [Replace this text with your student name]   
-TODO - [Replace this text with your Student ID]   
-TODO - [Replace this text with your github name]   
+TODO - Andrew Clark   
+TODO - l00144333
+TODO - AndrewLYIT  
 <br/><br/>
 ## Problem statement:
 You have been hired to work on a new RPG game project. The core classes for the game have been created but we need to populate the game database with appropriate game data. You have been tasked with creating a prototype windows application for adding game characters the system. The prototype should use a ***List*** collection called ***gameCharacters*** to store game character objects in lieu of a database. Rembemer to __document your code fully.__

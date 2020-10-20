@@ -29,15 +29,25 @@
         private void InitializeComponent()
         {
             this.mainMenuPanel = new System.Windows.Forms.Panel();
+            this.editingMenuPanel = new System.Windows.Forms.Panel();
+            this.mainMenuPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenuPanel
             // 
+            this.mainMenuPanel.Controls.Add(this.editingMenuPanel);
             this.mainMenuPanel.Location = new System.Drawing.Point(12, 12);
             this.mainMenuPanel.Name = "mainMenuPanel";
             this.mainMenuPanel.Size = new System.Drawing.Size(776, 426);
             this.mainMenuPanel.TabIndex = 0;
             this.mainMenuPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
+            // 
+            // editingMenuPanel
+            // 
+            this.editingMenuPanel.Location = new System.Drawing.Point(0, 1);
+            this.editingMenuPanel.Name = "editingMenuPanel";
+            this.editingMenuPanel.Size = new System.Drawing.Size(776, 425);
+            this.editingMenuPanel.TabIndex = 0;
             // 
             // Form1
             // 
@@ -47,6 +57,7 @@
             this.Controls.Add(this.mainMenuPanel);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.mainMenuPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -54,6 +65,7 @@
         #endregion
 
         private System.Windows.Forms.Panel mainMenuPanel;
+        private System.Windows.Forms.Panel editingMenuPanel;
     }
 }
 

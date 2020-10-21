@@ -20,16 +20,17 @@ namespace charEditor
         {
             InitializeComponent();
             this.charList = charList;
+            editingMenuPanel.Hide();
             displayCharacters();
+
         }
 
         private void displayCharacters()
         {
+
+            FlowLayoutPanel characterLayout = new FlowLayoutPanel();
             foreach (GameCharacter c in charList)
             {
-
-                editingMenuPanel.Hide();
-
                 GroupBox charInfo = new GroupBox();
                 TableLayoutPanel layout = new TableLayoutPanel();
 
@@ -44,19 +45,32 @@ namespace charEditor
                 editButton.Click += (s, e) =>
                 {
                     selectedChar = c;
-                    mainMenuPanel.Hide();
-                    //editingMenuPanel.Show();
-                    
+                    openEditingMenu(selectedChar);
                 };
 
                 layout.Controls.Add(charName);
                 layout.Controls.Add(charHealth);
                 layout.Controls.Add(editButton);
                 charInfo.Controls.Add(layout);
-                mainMenuPanel.Controls.Add(charInfo);
-
+                characterLayout.Controls.Add(charInfo);
 
             }
+
+            mainMenuPanel.Controls.Add(characterLayout);
+        }
+
+        private void openEditingMenu(GameCharacter selectedChar)
+        {
+
+            editingMenuPanel.Show();
+            GroupBox editOptions = new GroupBox();
+            TableLayoutPanel layout = new TableLayoutPanel();
+            tbCharName.Text = selectedChar.CharacterName;
+
+            layout.Controls.Add(lblCharName);
+            layout.Controls.Add(tbCharName);
+            editOptions.Controls.Add(layout);
+            editingMenuPanel.Controls.Add(editOptions);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -65,6 +79,11 @@ namespace charEditor
         }
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }

@@ -28,17 +28,33 @@ namespace charEditor
         private void displayCharacters()
         {
 
-            FlowLayoutPanel characterLayout = new FlowLayoutPanel();
             foreach (GameCharacter c in charList)
             {
-                GroupBox charInfo = new GroupBox();
                 TableLayoutPanel layout = new TableLayoutPanel();
-
+                GroupBox charBox = new GroupBox();
                 Label charName = new Label();
                 charName.Text = c.CharacterName;
 
                 Label charHealth = new Label();
-                charHealth.Text = c.Health.ToString();
+                charHealth.Text = "Health: "+c.Health.ToString();
+
+                Label charClass = new Label();
+                if (c is Cleric)
+                    charClass.Text = "Cleric";
+
+                else if (c is Brawler)
+                    charClass.Text = "Brawler";
+
+                else if (c is BlackWitch)
+                    charClass.Text = "BlackWitch";
+
+                else if (c is Orc)
+                    charClass.Text = "Orc";
+
+                else
+                    charClass.Text = "Unkown Class";
+
+
 
                 Button editButton = new Button();
                 editButton.Text = "Edit";
@@ -49,28 +65,29 @@ namespace charEditor
                 };
 
                 layout.Controls.Add(charName);
+                layout.Controls.Add(charClass);
                 layout.Controls.Add(charHealth);
                 layout.Controls.Add(editButton);
-                charInfo.Controls.Add(layout);
-                characterLayout.Controls.Add(charInfo);
+                charBox.Controls.Add(layout);
 
+                charLayoutPanel.Controls.Add(charBox);
             }
-
-            mainMenuPanel.Controls.Add(characterLayout);
+            mainMenuPanel.Show();
         }
 
         private void openEditingMenu(GameCharacter selectedChar)
         {
-
-            editingMenuPanel.Show();
-            GroupBox editOptions = new GroupBox();
-            TableLayoutPanel layout = new TableLayoutPanel();
+            layout.ColumnCount = 2;
+            
             tbCharName.Text = selectedChar.CharacterName;
+            healthSlider.Value = selectedChar.Health;
+            layout.Controls.Add(lblCharName, 0,0);
+            layout.Controls.Add(tbCharName, 1,0);
 
-            layout.Controls.Add(lblCharName);
-            layout.Controls.Add(tbCharName);
-            editOptions.Controls.Add(layout);
-            editingMenuPanel.Controls.Add(editOptions);
+            editingMenuPanel.Controls.Add(layout);
+            editingMenuPanel.Show();
+
+           
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -84,6 +101,38 @@ namespace charEditor
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            selectedChar.CharacterName = tbCharName.Text;
+            selectedChar.Health = healthSlider.Value;
+            editingMenuPanel.Hide();
+            charLayoutPanel.Controls.Clear();
+            displayCharacters();
+
+            selectedChar = null;
+        }
+
+
+        private void editingMenuPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCharName_Click(object sender, EventArgs e)
         {
 
         }

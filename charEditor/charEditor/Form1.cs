@@ -25,9 +25,9 @@ namespace charEditor
 
         }
 
-        private void displayCharacters()
+        public void displayCharacters()
         {
-
+            charLayoutPanel.Controls.Clear();
             foreach (GameCharacter c in charList)
             {
                 TableLayoutPanel layout = new TableLayoutPanel();
@@ -72,6 +72,17 @@ namespace charEditor
 
                 charLayoutPanel.Controls.Add(charBox);
             }
+
+            Button newCharBtn = new Button();
+            newCharBtn.Text = "+";
+            newCharBtn.Anchor = (AnchorStyles.Left | AnchorStyles.Right);
+            
+            newCharBtn.Click += (s, e) =>
+            {
+                NewCharForm form2 = new NewCharForm(charList, this);
+                form2.ShowDialog();
+            };
+            charLayoutPanel.Controls.Add(newCharBtn);
             mainMenuPanel.Show();
         }
 
@@ -81,8 +92,72 @@ namespace charEditor
             
             tbCharName.Text = selectedChar.CharacterName;
             healthSlider.Value = selectedChar.Health;
-            layout.Controls.Add(lblCharName, 0,0);
-            layout.Controls.Add(tbCharName, 1,0);
+            experienceIn.Text = selectedChar.CharacterExperience.ToString();
+            weightLimitIn.Text = selectedChar.WeightLimit.ToString();
+
+
+            if(selectedChar is BlackWitch)
+            {
+                BlackWitch temp = selectedChar as BlackWitch;
+
+                polyLbl1.Text = "Dark Power:";
+                polyNumeric1.Maximum = 100;
+                polyNumeric1.Value = temp.DarkPower;
+
+                polyLbl2.Text = "Magical Proficiency: ";
+                polyNumeric2.Maximum = 100;
+                polyNumeric2.Value = temp.MagicProficiency;
+                polyLbl2.Show();
+                polyNumeric2.Show();
+
+            }
+            
+            if (selectedChar is Brawler)
+            {
+                Brawler temp = selectedChar as Brawler;
+
+                polyLbl1.Text = "Punch Damage:";
+                polyNumeric1.Maximum = 100;
+                polyNumeric1.Value = temp.PunchDamage;
+
+                polyLbl2.Text = "Strength: ";
+                polyNumeric2.Maximum = 100;
+                polyNumeric2.Value = temp.Strength;
+                polyLbl2.Show();
+                polyNumeric2.Show();
+
+            }
+
+            if (selectedChar is Cleric)
+            {
+                Cleric temp = selectedChar as Cleric;
+
+                polyLbl1.Text = "Piety Level:";
+                polyNumeric1.Maximum = 100;
+                polyNumeric1.Value = temp.PietyLevel;
+
+                polyLbl2.Hide();
+                polyNumeric2.Hide();
+                
+            }
+
+            if (selectedChar is Orc)
+            {
+                Orc temp = selectedChar as Orc;
+
+                polyLbl1.Text = "Ferociousness:";
+                polyNumeric1.Maximum = 100;
+                polyNumeric1.Value = temp.Ferociousness;
+
+                polyLbl2.Text = "Strength: ";
+                polyNumeric2.Maximum = 100;
+                polyNumeric2.Value = temp.Strength;
+                polyLbl2.Show();
+                polyNumeric2.Show();
+
+            }
+
+
 
             editingMenuPanel.Controls.Add(layout);
             editingMenuPanel.Show();
@@ -107,8 +182,51 @@ namespace charEditor
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            selectedChar.CharacterName = tbCharName.Text;
+            if (!(tbCharName.Text.Length == 0))
+                selectedChar.CharacterName = tbCharName.Text;
+            else
+            {
+                System.Windows.Forms.MessageBox.Show("Character name cannot be empty.");
+                return;
+            }
+
             selectedChar.Health = healthSlider.Value;
+
+            //Updating character values
+            selectedChar.CharacterExperience = Convert.ToInt32(experienceIn.Value);
+            selectedChar.WeightLimit = Convert.ToDouble(weightLimitIn.Value);
+            if (selectedChar is BlackWitch)
+            {
+                BlackWitch temp = selectedChar as BlackWitch;
+                temp.DarkPower = Convert.ToInt32(polyNumeric1.Value);
+                temp.MagicProficiency = Convert.ToInt32(polyNumeric2.Value);
+                selectedChar = temp;
+            }
+
+            if (selectedChar is Brawler)
+            {
+                Brawler temp = selectedChar as Brawler;
+                temp.PunchDamage = Convert.ToInt32(polyNumeric1.Value);
+                temp.Strength = Convert.ToInt32(polyNumeric2.Value);
+                selectedChar = temp;
+            }
+
+            if (selectedChar is Cleric)
+            {
+                Cleric temp = selectedChar as Cleric;
+                temp.PietyLevel = Convert.ToInt32(polyNumeric1.Value);                
+                selectedChar = temp;
+            }
+
+            if (selectedChar is Orc)
+            {
+                Orc temp = selectedChar as Orc;
+                temp.Ferociousness = Convert.ToInt32(polyNumeric1.Value);
+                temp.Strength = Convert.ToInt32(polyNumeric2.Value);
+                selectedChar = temp;
+            }
+
+
             editingMenuPanel.Hide();
             charLayoutPanel.Controls.Clear();
             displayCharacters();
@@ -133,6 +251,11 @@ namespace charEditor
         }
 
         private void lblCharName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
         }

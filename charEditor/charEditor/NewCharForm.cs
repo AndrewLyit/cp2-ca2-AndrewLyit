@@ -152,5 +152,10 @@ namespace charEditor
         {
 
         }
+
+        private void NewCharForm_Load(object sender, EventArgs e)
+        {
+            classCombo.SelectedIndex = 0;
+        }
     }
 }

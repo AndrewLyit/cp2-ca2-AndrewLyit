@@ -32,27 +32,27 @@
             this.charLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.editingMenuPanel = new System.Windows.Forms.Panel();
             this.layout = new System.Windows.Forms.TableLayoutPanel();
+            this.polyNumeric2 = new System.Windows.Forms.NumericUpDown();
+            this.polyNumeric1 = new System.Windows.Forms.NumericUpDown();
+            this.experienceIn = new System.Windows.Forms.NumericUpDown();
+            this.weightLimitIn = new System.Windows.Forms.NumericUpDown();
+            this.xpLbl = new System.Windows.Forms.Label();
             this.tbCharName = new System.Windows.Forms.TextBox();
             this.hpText = new System.Windows.Forms.Label();
             this.lblCharName = new System.Windows.Forms.Label();
             this.healthSlider = new System.Windows.Forms.TrackBar();
-            this.saveBtn = new System.Windows.Forms.Button();
-            this.xpLbl = new System.Windows.Forms.Label();
             this.weightLbl = new System.Windows.Forms.Label();
             this.polyLbl1 = new System.Windows.Forms.Label();
             this.polyLbl2 = new System.Windows.Forms.Label();
-            this.weightLimitIn = new System.Windows.Forms.NumericUpDown();
-            this.experienceIn = new System.Windows.Forms.NumericUpDown();
-            this.polyNumeric1 = new System.Windows.Forms.NumericUpDown();
-            this.polyNumeric2 = new System.Windows.Forms.NumericUpDown();
+            this.saveBtn = new System.Windows.Forms.Button();
             this.mainMenuPanel.SuspendLayout();
             this.editingMenuPanel.SuspendLayout();
             this.layout.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.healthSlider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.weightLimitIn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.experienceIn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.polyNumeric1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.polyNumeric2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.polyNumeric1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.experienceIn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weightLimitIn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.healthSlider)).BeginInit();
             this.SuspendLayout();
             // 
             // mainMenuPanel
@@ -111,6 +111,107 @@
             this.layout.Size = new System.Drawing.Size(756, 365);
             this.layout.TabIndex = 4;
             // 
+            // polyNumeric2
+            // 
+            this.polyNumeric2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.polyNumeric2.Location = new System.Drawing.Point(118, 327);
+            this.polyNumeric2.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.polyNumeric2.MaximumSize = new System.Drawing.Size(100, 0);
+            this.polyNumeric2.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.polyNumeric2.Name = "polyNumeric2";
+            this.polyNumeric2.Size = new System.Drawing.Size(100, 20);
+            this.polyNumeric2.TabIndex = 16;
+            this.polyNumeric2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // polyNumeric1
+            // 
+            this.polyNumeric1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.polyNumeric1.Location = new System.Drawing.Point(118, 273);
+            this.polyNumeric1.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.polyNumeric1.MaximumSize = new System.Drawing.Size(100, 0);
+            this.polyNumeric1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.polyNumeric1.Name = "polyNumeric1";
+            this.polyNumeric1.Size = new System.Drawing.Size(100, 20);
+            this.polyNumeric1.TabIndex = 15;
+            this.polyNumeric1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // experienceIn
+            // 
+            this.experienceIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.experienceIn.Location = new System.Drawing.Point(118, 159);
+            this.experienceIn.MaximumSize = new System.Drawing.Size(100, 0);
+            this.experienceIn.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.experienceIn.Name = "experienceIn";
+            this.experienceIn.Size = new System.Drawing.Size(100, 20);
+            this.experienceIn.TabIndex = 14;
+            this.experienceIn.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // weightLimitIn
+            // 
+            this.weightLimitIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.weightLimitIn.Location = new System.Drawing.Point(118, 217);
+            this.weightLimitIn.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.weightLimitIn.MaximumSize = new System.Drawing.Size(100, 0);
+            this.weightLimitIn.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.weightLimitIn.Name = "weightLimitIn";
+            this.weightLimitIn.Size = new System.Drawing.Size(100, 20);
+            this.weightLimitIn.TabIndex = 13;
+            this.weightLimitIn.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // xpLbl
+            // 
+            this.xpLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.xpLbl.AutoSize = true;
+            this.xpLbl.Location = new System.Drawing.Point(3, 163);
+            this.xpLbl.Name = "xpLbl";
+            this.xpLbl.Size = new System.Drawing.Size(109, 13);
+            this.xpLbl.TabIndex = 5;
+            this.xpLbl.Text = "Experience:";
+            // 
             // tbCharName
             // 
             this.tbCharName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -159,26 +260,6 @@
             this.healthSlider.Value = 50;
             this.healthSlider.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
-            // saveBtn
-            // 
-            this.saveBtn.Location = new System.Drawing.Point(9, 387);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 23);
-            this.saveBtn.TabIndex = 2;
-            this.saveBtn.Text = "Save";
-            this.saveBtn.UseVisualStyleBackColor = true;
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
-            // 
-            // xpLbl
-            // 
-            this.xpLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.xpLbl.AutoSize = true;
-            this.xpLbl.Location = new System.Drawing.Point(3, 163);
-            this.xpLbl.Name = "xpLbl";
-            this.xpLbl.Size = new System.Drawing.Size(109, 13);
-            this.xpLbl.TabIndex = 5;
-            this.xpLbl.Text = "Experience:";
-            // 
             // weightLbl
             // 
             this.weightLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -209,96 +290,15 @@
             this.polyLbl2.TabIndex = 8;
             this.polyLbl2.Text = "plbl2";
             // 
-            // weightLimitIn
+            // saveBtn
             // 
-            this.weightLimitIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.weightLimitIn.Location = new System.Drawing.Point(118, 217);
-            this.weightLimitIn.Maximum = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
-            this.weightLimitIn.MaximumSize = new System.Drawing.Size(100, 0);
-            this.weightLimitIn.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.weightLimitIn.Name = "weightLimitIn";
-            this.weightLimitIn.Size = new System.Drawing.Size(100, 20);
-            this.weightLimitIn.TabIndex = 13;
-            this.weightLimitIn.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // experienceIn
-            // 
-            this.experienceIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.experienceIn.Location = new System.Drawing.Point(118, 159);
-            this.experienceIn.MaximumSize = new System.Drawing.Size(100, 0);
-            this.experienceIn.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.experienceIn.Name = "experienceIn";
-            this.experienceIn.Size = new System.Drawing.Size(100, 20);
-            this.experienceIn.TabIndex = 14;
-            this.experienceIn.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // polyNumeric1
-            // 
-            this.polyNumeric1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.polyNumeric1.Location = new System.Drawing.Point(118, 273);
-            this.polyNumeric1.Maximum = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
-            this.polyNumeric1.MaximumSize = new System.Drawing.Size(100, 0);
-            this.polyNumeric1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.polyNumeric1.Name = "polyNumeric1";
-            this.polyNumeric1.Size = new System.Drawing.Size(100, 20);
-            this.polyNumeric1.TabIndex = 15;
-            this.polyNumeric1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // polyNumeric2
-            // 
-            this.polyNumeric2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.polyNumeric2.Location = new System.Drawing.Point(118, 327);
-            this.polyNumeric2.Maximum = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
-            this.polyNumeric2.MaximumSize = new System.Drawing.Size(100, 0);
-            this.polyNumeric2.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.polyNumeric2.Name = "polyNumeric2";
-            this.polyNumeric2.Size = new System.Drawing.Size(100, 20);
-            this.polyNumeric2.TabIndex = 16;
-            this.polyNumeric2.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.saveBtn.Location = new System.Drawing.Point(9, 387);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveBtn.TabIndex = 2;
+            this.saveBtn.Text = "Save";
+            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // Form1
             // 
@@ -315,11 +315,11 @@
             this.editingMenuPanel.PerformLayout();
             this.layout.ResumeLayout(false);
             this.layout.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.healthSlider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.weightLimitIn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.experienceIn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.polyNumeric1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.polyNumeric2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.polyNumeric1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.experienceIn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weightLimitIn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.healthSlider)).EndInit();
             this.ResumeLayout(false);
 
         }

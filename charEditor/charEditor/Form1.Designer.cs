@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.mainMenuPanel = new System.Windows.Forms.Panel();
             this.charLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.editingMenuPanel = new System.Windows.Forms.Panel();
@@ -45,6 +46,9 @@
             this.polyLbl1 = new System.Windows.Forms.Label();
             this.polyLbl2 = new System.Windows.Forms.Label();
             this.saveBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.deleteBtn = new System.Windows.Forms.Button();
+            this.newCharBtn = new System.Windows.Forms.Button();
             this.mainMenuPanel.SuspendLayout();
             this.editingMenuPanel.SuspendLayout();
             this.layout.SuspendLayout();
@@ -57,24 +61,34 @@
             // 
             // mainMenuPanel
             // 
+            this.mainMenuPanel.BackColor = System.Drawing.Color.Transparent;
+            this.mainMenuPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("mainMenuPanel.BackgroundImage")));
+            this.mainMenuPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.mainMenuPanel.Controls.Add(this.newCharBtn);
+            this.mainMenuPanel.Controls.Add(this.label1);
             this.mainMenuPanel.Controls.Add(this.charLayoutPanel);
-            this.mainMenuPanel.Location = new System.Drawing.Point(12, 12);
+            this.mainMenuPanel.Location = new System.Drawing.Point(12, 9);
             this.mainMenuPanel.Name = "mainMenuPanel";
-            this.mainMenuPanel.Size = new System.Drawing.Size(835, 413);
+            this.mainMenuPanel.Size = new System.Drawing.Size(835, 430);
             this.mainMenuPanel.TabIndex = 0;
             this.mainMenuPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
             // charLayoutPanel
             // 
-            this.charLayoutPanel.Location = new System.Drawing.Point(3, 3);
+            this.charLayoutPanel.BackColor = System.Drawing.Color.Transparent;
+            this.charLayoutPanel.Location = new System.Drawing.Point(69, 67);
             this.charLayoutPanel.Name = "charLayoutPanel";
-            this.charLayoutPanel.Size = new System.Drawing.Size(829, 407);
+            this.charLayoutPanel.Size = new System.Drawing.Size(899, 317);
             this.charLayoutPanel.TabIndex = 0;
             // 
             // editingMenuPanel
             // 
+            this.editingMenuPanel.BackColor = System.Drawing.SystemColors.Control;
+            this.editingMenuPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("editingMenuPanel.BackgroundImage")));
+            this.editingMenuPanel.Controls.Add(this.deleteBtn);
             this.editingMenuPanel.Controls.Add(this.layout);
             this.editingMenuPanel.Controls.Add(this.saveBtn);
+            this.editingMenuPanel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.editingMenuPanel.Location = new System.Drawing.Point(853, 12);
             this.editingMenuPanel.Name = "editingMenuPanel";
             this.editingMenuPanel.Size = new System.Drawing.Size(489, 413);
@@ -84,6 +98,7 @@
             // layout
             // 
             this.layout.AutoSize = true;
+            this.layout.BackColor = System.Drawing.Color.Transparent;
             this.layout.ColumnCount = 2;
             this.layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.33546F));
             this.layout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.66454F));
@@ -108,13 +123,13 @@
             this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
-            this.layout.Size = new System.Drawing.Size(756, 365);
+            this.layout.Size = new System.Drawing.Size(1050, 365);
             this.layout.TabIndex = 4;
             // 
             // polyNumeric2
             // 
             this.polyNumeric2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.polyNumeric2.Location = new System.Drawing.Point(118, 327);
+            this.polyNumeric2.Location = new System.Drawing.Point(164, 327);
             this.polyNumeric2.Maximum = new decimal(new int[] {
             60,
             0,
@@ -138,7 +153,7 @@
             // polyNumeric1
             // 
             this.polyNumeric1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.polyNumeric1.Location = new System.Drawing.Point(118, 273);
+            this.polyNumeric1.Location = new System.Drawing.Point(164, 273);
             this.polyNumeric1.Maximum = new decimal(new int[] {
             60,
             0,
@@ -162,7 +177,7 @@
             // experienceIn
             // 
             this.experienceIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.experienceIn.Location = new System.Drawing.Point(118, 159);
+            this.experienceIn.Location = new System.Drawing.Point(164, 159);
             this.experienceIn.MaximumSize = new System.Drawing.Size(100, 0);
             this.experienceIn.Minimum = new decimal(new int[] {
             1,
@@ -181,7 +196,7 @@
             // weightLimitIn
             // 
             this.weightLimitIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.weightLimitIn.Location = new System.Drawing.Point(118, 217);
+            this.weightLimitIn.Location = new System.Drawing.Point(164, 217);
             this.weightLimitIn.Maximum = new decimal(new int[] {
             60,
             0,
@@ -206,16 +221,19 @@
             // 
             this.xpLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.xpLbl.AutoSize = true;
-            this.xpLbl.Location = new System.Drawing.Point(3, 163);
+            this.xpLbl.Font = new System.Drawing.Font("Castellar", 12F, System.Drawing.FontStyle.Bold);
+            this.xpLbl.Location = new System.Drawing.Point(3, 160);
             this.xpLbl.Name = "xpLbl";
-            this.xpLbl.Size = new System.Drawing.Size(109, 13);
+            this.xpLbl.Size = new System.Drawing.Size(155, 19);
             this.xpLbl.TabIndex = 5;
             this.xpLbl.Text = "Experience:";
+            this.xpLbl.Click += new System.EventHandler(this.xpLbl_Click);
             // 
             // tbCharName
             // 
             this.tbCharName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbCharName.Location = new System.Drawing.Point(118, 25);
+            this.tbCharName.BackColor = System.Drawing.SystemColors.Info;
+            this.tbCharName.Location = new System.Drawing.Point(164, 25);
             this.tbCharName.MaximumSize = new System.Drawing.Size(100, 50);
             this.tbCharName.MaxLength = 15;
             this.tbCharName.Name = "tbCharName";
@@ -226,9 +244,10 @@
             // 
             this.hpText.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.hpText.AutoSize = true;
-            this.hpText.Location = new System.Drawing.Point(3, 100);
+            this.hpText.Font = new System.Drawing.Font("Castellar", 12F, System.Drawing.FontStyle.Bold);
+            this.hpText.Location = new System.Drawing.Point(3, 97);
             this.hpText.Name = "hpText";
-            this.hpText.Size = new System.Drawing.Size(109, 13);
+            this.hpText.Size = new System.Drawing.Size(155, 19);
             this.hpText.TabIndex = 3;
             this.hpText.Text = "Health:";
             this.hpText.Click += new System.EventHandler(this.label1_Click);
@@ -237,10 +256,11 @@
             // 
             this.lblCharName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCharName.AutoSize = true;
-            this.lblCharName.Location = new System.Drawing.Point(3, 29);
+            this.lblCharName.Font = new System.Drawing.Font("Castellar", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCharName.Location = new System.Drawing.Point(3, 26);
             this.lblCharName.MinimumSize = new System.Drawing.Size(110, 0);
             this.lblCharName.Name = "lblCharName";
-            this.lblCharName.Size = new System.Drawing.Size(110, 13);
+            this.lblCharName.Size = new System.Drawing.Size(155, 19);
             this.lblCharName.TabIndex = 0;
             this.lblCharName.Text = "Name: ";
             this.lblCharName.Click += new System.EventHandler(this.lblCharName_Click);
@@ -249,7 +269,8 @@
             // 
             this.healthSlider.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.healthSlider.Location = new System.Drawing.Point(118, 94);
+            this.healthSlider.BackColor = System.Drawing.SystemColors.Control;
+            this.healthSlider.Location = new System.Drawing.Point(164, 94);
             this.healthSlider.Maximum = 100;
             this.healthSlider.MaximumSize = new System.Drawing.Size(200, 0);
             this.healthSlider.Name = "healthSlider";
@@ -264,9 +285,10 @@
             // 
             this.weightLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.weightLbl.AutoSize = true;
-            this.weightLbl.Location = new System.Drawing.Point(3, 220);
+            this.weightLbl.Font = new System.Drawing.Font("Castellar", 12F, System.Drawing.FontStyle.Bold);
+            this.weightLbl.Location = new System.Drawing.Point(3, 217);
             this.weightLbl.Name = "weightLbl";
-            this.weightLbl.Size = new System.Drawing.Size(109, 13);
+            this.weightLbl.Size = new System.Drawing.Size(155, 19);
             this.weightLbl.TabIndex = 6;
             this.weightLbl.Text = "Weight Limit:";
             // 
@@ -274,9 +296,10 @@
             // 
             this.polyLbl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.polyLbl1.AutoSize = true;
-            this.polyLbl1.Location = new System.Drawing.Point(3, 277);
+            this.polyLbl1.Font = new System.Drawing.Font("Castellar", 12F, System.Drawing.FontStyle.Bold);
+            this.polyLbl1.Location = new System.Drawing.Point(3, 274);
             this.polyLbl1.Name = "polyLbl1";
-            this.polyLbl1.Size = new System.Drawing.Size(109, 13);
+            this.polyLbl1.Size = new System.Drawing.Size(155, 19);
             this.polyLbl1.TabIndex = 7;
             this.polyLbl1.Text = "plbl1";
             // 
@@ -284,26 +307,64 @@
             // 
             this.polyLbl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.polyLbl2.AutoSize = true;
-            this.polyLbl2.Location = new System.Drawing.Point(3, 331);
+            this.polyLbl2.Font = new System.Drawing.Font("Castellar", 12F, System.Drawing.FontStyle.Bold);
+            this.polyLbl2.Location = new System.Drawing.Point(3, 328);
             this.polyLbl2.Name = "polyLbl2";
-            this.polyLbl2.Size = new System.Drawing.Size(109, 13);
+            this.polyLbl2.Size = new System.Drawing.Size(155, 19);
             this.polyLbl2.TabIndex = 8;
             this.polyLbl2.Text = "plbl2";
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(9, 387);
+            this.saveBtn.BackColor = System.Drawing.Color.Transparent;
+            this.saveBtn.Font = new System.Drawing.Font("Castellar", 12F, System.Drawing.FontStyle.Bold);
+            this.saveBtn.Location = new System.Drawing.Point(37, 387);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(75, 23);
             this.saveBtn.TabIndex = 2;
             this.saveBtn.Text = "Save";
-            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.UseVisualStyleBackColor = false;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Castellar", 20F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(73, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(231, 33);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Characters:";
+            // 
+            // deleteBtn
+            // 
+            this.deleteBtn.BackColor = System.Drawing.Color.Transparent;
+            this.deleteBtn.Font = new System.Drawing.Font("Castellar", 12F, System.Drawing.FontStyle.Bold);
+            this.deleteBtn.Location = new System.Drawing.Point(205, 387);
+            this.deleteBtn.Name = "deleteBtn";
+            this.deleteBtn.Size = new System.Drawing.Size(93, 23);
+            this.deleteBtn.TabIndex = 5;
+            this.deleteBtn.Text = "DELETE";
+            this.deleteBtn.UseVisualStyleBackColor = false;
+            this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
+            // 
+            // newCharBtn
+            // 
+            this.newCharBtn.BackColor = System.Drawing.Color.Transparent;
+            this.newCharBtn.Font = new System.Drawing.Font("Castellar", 12F, System.Drawing.FontStyle.Bold);
+            this.newCharBtn.Location = new System.Drawing.Point(553, 31);
+            this.newCharBtn.Name = "newCharBtn";
+            this.newCharBtn.Size = new System.Drawing.Size(95, 30);
+            this.newCharBtn.TabIndex = 6;
+            this.newCharBtn.Text = "Create";
+            this.newCharBtn.UseVisualStyleBackColor = false;
+            this.newCharBtn.Click += new System.EventHandler(this.newCharBtn_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1213, 451);
             this.Controls.Add(this.editingMenuPanel);
             this.Controls.Add(this.mainMenuPanel);
@@ -311,6 +372,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.mainMenuPanel.ResumeLayout(false);
+            this.mainMenuPanel.PerformLayout();
             this.editingMenuPanel.ResumeLayout(false);
             this.editingMenuPanel.PerformLayout();
             this.layout.ResumeLayout(false);
@@ -343,6 +405,9 @@
         private System.Windows.Forms.NumericUpDown weightLimitIn;
         private System.Windows.Forms.NumericUpDown polyNumeric2;
         private System.Windows.Forms.NumericUpDown polyNumeric1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button deleteBtn;
+        private System.Windows.Forms.Button newCharBtn;
     }
 }
 

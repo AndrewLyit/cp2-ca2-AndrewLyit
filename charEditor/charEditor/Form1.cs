@@ -31,7 +31,8 @@ namespace charEditor
             foreach (GameCharacter c in charList)
             {
                 TableLayoutPanel layout = new TableLayoutPanel();
-                GroupBox charBox = new GroupBox();
+                //GroupBox charBox = new GroupBox();
+                Panel charBox = new Panel();
                 Label charName = new Label();
                 charName.Text = c.CharacterName;
 
@@ -70,19 +71,10 @@ namespace charEditor
                 layout.Controls.Add(editButton);
                 charBox.Controls.Add(layout);
 
+
                 charLayoutPanel.Controls.Add(charBox);
             }
 
-            Button newCharBtn = new Button();
-            newCharBtn.Text = "+";
-            newCharBtn.Anchor = (AnchorStyles.Left | AnchorStyles.Right);
-            
-            newCharBtn.Click += (s, e) =>
-            {
-                NewCharForm form2 = new NewCharForm(charList, this);
-                form2.ShowDialog();
-            };
-            charLayoutPanel.Controls.Add(newCharBtn);
             mainMenuPanel.Show();
         }
 
@@ -103,8 +95,8 @@ namespace charEditor
                 polyLbl1.Text = "Dark Power:";
                 polyNumeric1.Maximum = 100;
                 polyNumeric1.Value = temp.DarkPower;
-
-                polyLbl2.Text = "Magical Proficiency: ";
+                
+                polyLbl2.Text = "M. Proficiency: ";
                 polyNumeric2.Maximum = 100;
                 polyNumeric2.Value = temp.MagicProficiency;
                 polyLbl2.Show();
@@ -258,6 +250,24 @@ namespace charEditor
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void xpLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteBtn_Click(object sender, EventArgs e)
+        {
+            charList.Remove(selectedChar);
+            editingMenuPanel.Hide();
+            displayCharacters();
+        }
+
+        private void newCharBtn_Click(object sender, EventArgs e)
+        {
+            NewCharForm form2 = new NewCharForm(charList, this);
+            form2.ShowDialog();
         }
     }
 }

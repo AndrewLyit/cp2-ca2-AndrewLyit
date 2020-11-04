@@ -58,7 +58,7 @@ namespace charEditor
                 if (newChar is BlackWitch)
                 {
                     polyLbl1.Text = "Dark Power:";
-                    polyLbl2.Text = "Magic Proficiency:";
+                    polyLbl2.Text = "M.Proficiency:";
                     polyLbl2.Show();
                     polyNumeric2.Show();
                 }
